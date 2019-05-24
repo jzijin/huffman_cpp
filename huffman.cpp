@@ -90,29 +90,29 @@ void Huffman::huffman_compress()
 {
     // cout << this->in_file_name << endl; 
     // 4s
-    // auto t3 = chrono::system_clock::now();
+    auto t3 = chrono::system_clock::now();
     get_map();
-    // auto t4 = chrono::system_clock::now();
-    // cout << "get_map time = " << chrono::duration_cast<chrono::seconds>(t4-t3).count() << endl;
+    auto t4 = chrono::system_clock::now();
+    cout << "get_map time = " << chrono::duration_cast<chrono::seconds>(t4-t3).count() << endl;
 
 
 
     // 测试得到花了多长时间 0s
-    // auto t1 = chrono::system_clock::now();
+    auto t1 = chrono::system_clock::now();
     // 得到huffman树
     Node *root = create_huffman_tree();
-    // auto t2 = chrono::system_clock::now();
-    // cout << chrono::duration_cast<chrono::seconds>(t2-t1).count() << endl;
+    auto t2 = chrono::system_clock::now();
+    cout << chrono::duration_cast<chrono::seconds>(t2-t1).count() << endl;
 
 
     // 编码Huffman树 0s
-    // auto t5 = chrono::system_clock::now();
+    auto t5 = chrono::system_clock::now();
     create_huffman_code(root);
-    // auto t6 = chrono::system_clock::now();
-    // cout << chrono::duration_cast<chrono::seconds>(t6-t5).count() << endl;
+    auto t6 = chrono::system_clock::now();
+    cout << chrono::duration_cast<chrono::seconds>(t6-t5).count() << endl;
 
 
-    // auto t7 = chrono::system_clock::now();
+    auto t7 = chrono::system_clock::now();
     
     unsigned int size = huffnode.size();
     // 开始写入
@@ -222,8 +222,8 @@ void Huffman::huffman_compress()
     // }
 
 
-    // auto t8 = chrono::system_clock::now(); // 12s
-    // cout << "compress time= " << chrono::duration_cast<chrono::seconds>(t8-t7).count() << endl;
+    auto t8 = chrono::system_clock::now(); // 12s
+    cout << "compress time= " << chrono::duration_cast<chrono::seconds>(t8-t7).count() << endl;
     in_file.close();
     out_file.close();
 }

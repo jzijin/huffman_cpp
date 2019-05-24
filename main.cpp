@@ -1,6 +1,5 @@
 #include "huffman.h"
 
-// TODO: 能否用sheared_ptr 重新定义节点呢？？？？
 int main()
 {
     string s1 = "tmp.jpg";
